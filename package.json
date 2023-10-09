@@ -1,0 +1,11 @@
+{
+  "type": "module",
+  "dependencies": {
+    "puppeteer": "^19.11.1",
+    "puppeteer-screen-recorder": "^2.1.2"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "description": ""
+}
