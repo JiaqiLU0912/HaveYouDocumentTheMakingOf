@@ -1,5 +1,7 @@
 import puppeteer from 'puppeteer';
-import { PuppeteerScreenRecorder } from 'puppeteer-screen-recorder';
+import {
+  PuppeteerScreenRecorder
+} from 'puppeteer-screen-recorder';
 
 (async () => {
   let pathToExtension = '/Users/lujiaqi/Documents/HaveYouDocumentTheMakingOf/extension-path'
@@ -11,7 +13,8 @@ import { PuppeteerScreenRecorder } from 'puppeteer-screen-recorder';
       defaultViewport: null,
       args: [
         `--disable-extensions-except=${pathToExtension}`,
-        `--load-extension=${pathToExtension}`
+        `--load-extension=${pathToExtension}`,
+        `--window-size=${1080},${3840}`
       ]
     });
 
@@ -21,19 +24,20 @@ import { PuppeteerScreenRecorder } from 'puppeteer-screen-recorder';
       width: 1080,
       height: 3840
     });
-    const recorder = new PuppeteerScreenRecorder(page,
-      {
-        fps: 60,
-        videoFrame: {
-          width: 1080,
-          height: 3840,
-        },
-      }
-    );
+
+    const recorder = new PuppeteerScreenRecorder(page, {
+      fps: 60,
+      videoFrame: {
+        width: 1080,
+        height: 3840,
+      },
+    });
     await recorder.start('./video/ock.mp4');
 
     // 1
-    await page.goto('https://archive.aec.at/prix/', { timeout: 0 });
+    await page.goto('https://archive.aec.at/prix/', {
+      timeout: 0
+    });
 
     await page.waitForTimeout(3000);
     let y;
@@ -48,7 +52,9 @@ import { PuppeteerScreenRecorder } from 'puppeteer-screen-recorder';
     await page.waitForTimeout(15000);
 
     // 2
-    await page.goto('http://archive.rhizome.org/artbase/55583/www.vvork.com/index.html@tag=cat', { timeout: 0 });
+    await page.goto('http://archive.rhizome.org/artbase/55583/www.vvork.com/index.html@tag=cat', {
+      timeout: 0
+    });
 
     await page.waitForTimeout(5000);
     await page.evaluate(() => {
@@ -140,7 +146,9 @@ import { PuppeteerScreenRecorder } from 'puppeteer-screen-recorder';
     });
     await page.waitForTimeout(6000);
 
-    await page.goto('http://archive.rhizome.org/artbase/55583/www.vvork.com/index.html@tag=dog', { timeout: 0 });
+    await page.goto('http://archive.rhizome.org/artbase/55583/www.vvork.com/index.html@tag=dog', {
+      timeout: 0
+    });
 
     await page.waitForTimeout(5000);
     await page.evaluate(() => {
@@ -240,212 +248,9 @@ import { PuppeteerScreenRecorder } from 'puppeteer-screen-recorder';
     });
     await page.waitForTimeout(6000);
 
-    await page.goto('http://archive.rhizome.org/artbase/55583/www.vvork.com/index.html@tag=car', { timeout: 0 });
-
-    await page.waitForTimeout(3000);
-    await page.evaluate(() => {
-      let elem = document.querySelector('#post-22860');
-      elem.scrollIntoView({
-        block: "end"
-      });
+    await page.goto('http://archive.rhizome.org/artbase/55583/www.vvork.com/index.html@tag=shit', {
+      timeout: 0
     });
-    await page.waitForTimeout(3000);
-    await page.evaluate(() => {
-      let elem = document.querySelector('#post-22016');
-      elem.scrollIntoView({
-        block: "end"
-      });
-    });
-    await page.waitForTimeout(3000);
-    await page.evaluate(() => {
-      let elem = document.querySelector('#post-21517');
-      elem.scrollIntoView({
-        block: "end"
-      });
-    });
-    await page.waitForTimeout(3000);
-    await page.evaluate(() => {
-      let elem = document.querySelector('#post-21125');
-      elem.scrollIntoView({
-        block: "end"
-      });
-    });
-    await page.waitForTimeout(3000);
-    await page.evaluate(() => {
-      let elem = document.querySelector('#post-21118');
-      elem.scrollIntoView({
-        block: "end"
-      });
-    });
-    await page.waitForTimeout(3000);
-    await page.evaluate(() => {
-      let elem = document.querySelector('#post-21101');
-      elem.scrollIntoView({
-        block: "end"
-      });
-    });
-    await page.waitForTimeout(3000);
-    await page.evaluate(() => {
-      let elem = document.querySelector('#post-20822');
-      elem.scrollIntoView({
-        block: "end"
-      });
-    });
-    await page.waitForTimeout(3000);
-    await page.evaluate(() => {
-      let elem = document.querySelector('#post-20569');
-      elem.scrollIntoView({
-        block: "end"
-      });
-    });
-    await page.waitForTimeout(3000);
-    await page.evaluate(() => {
-      let elem = document.querySelector('#post-20349');
-      elem.scrollIntoView({
-        block: "end"
-      });
-    });
-    await page.waitForTimeout(3000);
-    await page.evaluate(() => {
-      let elem = document.querySelector('#post-20160');
-      elem.scrollIntoView({
-        block: "end"
-      });
-    });
-    await page.waitForTimeout(3000);
-    await page.evaluate(() => {
-      let elem = document.querySelector('#post-19883');
-      elem.scrollIntoView({
-        block: "end"
-      });
-    });
-    await page.waitForTimeout(3000);
-    await page.evaluate(() => {
-      let elem = document.querySelector('#post-19236');
-      elem.scrollIntoView({
-        block: "end"
-      });
-    });
-    await page.waitForTimeout(3000);
-    await page.evaluate(() => {
-      let elem = document.querySelector('#post-18471');
-      elem.scrollIntoView({
-        block: "end"
-      });
-    });
-    await page.waitForTimeout(3000);
-    await page.evaluate(() => {
-      let elem = document.querySelector('#post-16965');
-      elem.scrollIntoView({
-        block: "end"
-      });
-    });
-    await page.waitForTimeout(3000);
-    await page.evaluate(() => {
-      window.scrollBy(0, window.innerHeight)
-    });
-    await page.waitForTimeout(6000);
-
-    await page.goto('http://archive.rhizome.org/artbase/55583/www.vvork.com/index.html@tag=car&paged=2', { timeout: 0 });
-
-    await page.waitForTimeout(3000);
-    await page.evaluate(() => {
-      let elem = document.querySelector('#post-13067');
-      elem.scrollIntoView({
-        block: "end"
-      });
-    });
-    await page.waitForTimeout(3000);
-    await page.evaluate(() => {
-      let elem = document.querySelector('#post-13065');
-      elem.scrollIntoView({
-        block: "end"
-      });
-    });
-    await page.waitForTimeout(3000);
-    await page.evaluate(() => {
-      let elem = document.querySelector('#post-12596');
-      elem.scrollIntoView({
-        block: "end"
-      });
-    });
-    await page.waitForTimeout(3000);
-    await page.evaluate(() => {
-      let elem = document.querySelector('#post-12275');
-      elem.scrollIntoView({
-        block: "end"
-      });
-    });
-    await page.waitForTimeout(3000);
-    await page.evaluate(() => {
-      let elem = document.querySelector('#post-12348');
-      elem.scrollIntoView({
-        block: "end"
-      });
-    });
-    await page.waitForTimeout(3000);
-    await page.evaluate(() => {
-      let elem = document.querySelector('#post-12315');
-      elem.scrollIntoView({
-        block: "end"
-      });
-    });
-    await page.waitForTimeout(3000);
-    await page.evaluate(() => {
-      let elem = document.querySelector('#post-12311');
-      elem.scrollIntoView({
-        block: "end"
-      });
-    });
-    await page.waitForTimeout(3000);
-    await page.evaluate(() => {
-      let elem = document.querySelector('#post-12243');
-      elem.scrollIntoView({
-        block: "end"
-      });
-    });
-    await page.waitForTimeout(3000);
-    await page.evaluate(() => {
-      let elem = document.querySelector('#post-11923');
-      elem.scrollIntoView({
-        block: "end"
-      });
-    });
-    await page.waitForTimeout(3000);
-    await page.evaluate(() => {
-      let elem = document.querySelector('#post-7950');
-      elem.scrollIntoView({
-        block: "end"
-      });
-    });
-    await page.waitForTimeout(3000);
-    await page.evaluate(() => {
-      let elem = document.querySelector('#post-7443');
-      elem.scrollIntoView({
-        block: "end"
-      });
-    });
-    await page.waitForTimeout(3000);
-    await page.evaluate(() => {
-      let elem = document.querySelector('#post-7383');
-      elem.scrollIntoView({
-        block: "end"
-      });
-    });
-    await page.waitForTimeout(3000);
-    await page.evaluate(() => {
-      let elem = document.querySelector('#post-7330');
-      elem.scrollIntoView({
-        block: "end"
-      });
-    });
-    await page.waitForTimeout(3000);
-    await page.evaluate(() => {
-      window.scrollBy(0, window.innerHeight)
-    });
-    await page.waitForTimeout(6000);
-
-    await page.goto('http://archive.rhizome.org/artbase/55583/www.vvork.com/index.html@tag=shit', { timeout: 0 });
 
     await page.waitForTimeout(5000);
     await page.evaluate(() => {
@@ -454,7 +259,9 @@ import { PuppeteerScreenRecorder } from 'puppeteer-screen-recorder';
     await page.waitForTimeout(6000);
 
     // 3
-    await page.goto('https://www.telegraph.co.uk/culture/culturepicturegalleries/8216563/Is-it-art.html?image=8', { timeout: 0 });
+    await page.goto('https://www.telegraph.co.uk/culture/culturepicturegalleries/8216563/Is-it-art.html?image=8', {
+      timeout: 0
+    });
     await page.waitForTimeout(5000);
     await page.evaluate(() => {
       let elem = document.querySelector('body > main > article > div.grid-col.grid-col-12.tpl-article__layout.tpl-article__layout--content.martech-paywall__full-width > div > figure:nth-child(7) > figcaption');
@@ -479,24 +286,171 @@ import { PuppeteerScreenRecorder } from 'puppeteer-screen-recorder';
     await page.waitForTimeout(3000);
 
     // 4
-    await page.goto('https://www.tate.org.uk/search?ka=1&q=conceptual%20art&type=artwork&page=3', { timeout: 0 });
+    await page.goto('https://www.tate.org.uk/search?ka=1&q=conceptual%20art&type=artwork&page=3', {
+      timeout: 0
+    });
     await page.click('#onetrust-accept-btn-handler');
     await page.waitForTimeout(10000);
-    await page.goto('https://www.tate.org.uk/search?ka=1&q=conceptual%20art&type=artwork&page=4', { timeout: 0 });
+    await page.goto('https://www.tate.org.uk/search?ka=1&q=conceptual%20art&type=artwork&page=4', {
+      timeout: 0
+    });
     await page.waitForTimeout(10000);
-    await page.goto('https://www.tate.org.uk/search?ka=1&q=conceptual%20art&type=artwork&page=5', { timeout: 0 });
+    await page.goto('https://www.tate.org.uk/search?ka=1&q=conceptual%20art&type=artwork&page=5', {
+      timeout: 0
+    });
     await page.waitForTimeout(10000);
-    await page.goto('https://www.tate.org.uk/search?ka=1&q=conceptual%20art&type=artwork&page=6', { timeout: 0 });
+    await page.goto('https://www.tate.org.uk/search?ka=1&q=conceptual%20art&type=artwork&page=6', {
+      timeout: 0
+    });
     await page.waitForTimeout(10000);
-    await page.goto('https://www.tate.org.uk/search?ka=1&q=conceptual%20art&type=artwork&page=7', { timeout: 0 });
+    await page.goto('https://www.tate.org.uk/search?ka=1&q=conceptual%20art&type=artwork&page=7', {
+      timeout: 0
+    });
     await page.waitForTimeout(10000);
-    await page.goto('https://www.tate.org.uk/search?ka=1&q=conceptual%20art&type=artwork&page=8', { timeout: 0 });
+    await page.goto('https://www.tate.org.uk/search?ka=1&q=conceptual%20art&type=artwork&page=8', {
+      timeout: 0
+    });
     await page.waitForTimeout(10000);
-    await page.goto('https://www.tate.org.uk/search?ka=1&q=conceptual%20art&type=artwork&page=9', { timeout: 0 });
+    await page.goto('https://www.tate.org.uk/search?ka=1&q=conceptual%20art&type=artwork&page=9', {
+      timeout: 0
+    });
     await page.waitForTimeout(10000);
 
     // 5
-    await page.goto('https://untitled.cwandt.com/', { timeout: 0 });
+    await page.goto(' https://www.metmuseum.org/art/collection/search?q=Sherrie+Levine&sortBy=Relevance', {
+      timeout: 0
+    });
+    await page.waitForTimeout(3000);
+    await page.evaluate(() => {
+      let elem = document.querySelector('#__next > main > section.object-grid_grid__hKKqs > figure:nth-child(23)');
+      elem.scrollIntoView({
+        block: "end"
+      });
+    });
+    await page.waitForTimeout(12000);
+
+    // 6
+    await page.goto('https://news.artnet.com/art-world/da-vinci-face-photo-filter-2068997', {
+      timeout: 0
+    });
+    try {
+      await page.$('#ouibounce-modal > div > div.close-signup')
+      await page.click('#ouibounce-modal > div > div.close-signup');
+    } catch {}
+    await page.waitForTimeout(5000);
+
+    await page.evaluate(() => {
+      let elem = document.querySelector('#post-2068997 > div > div > div.article-content.col-md-8 > div.flex-columns.row > div.col-md-9.col-md-push-2 > div > p:nth-child(15)');
+      elem.scrollIntoView({
+        block: "end"
+      });
+    });
+    try {
+      await page.$('#ouibounce-modal > div > div.close-signup')
+      await page.click('#ouibounce-modal > div > div.close-signup');
+    } catch {}
+    await page.waitForTimeout(2000);
+
+    await page.evaluate(() => {
+      let elem = document.querySelector('#post-2068997 > div > div > div.article-content.col-md-8 > div.flex-columns.row > div.col-md-9.col-md-push-2 > div > p:nth-child(16)');
+      elem.scrollIntoView({
+        block: "end"
+      });
+    });
+    try {
+      await page.$('#ouibounce-modal > div > div.close-signup')
+      await page.click('#ouibounce-modal > div > div.close-signup');
+    } catch {}
+    await page.waitForTimeout(2000);
+
+    await page.evaluate(() => {
+      let elem = document.querySelector('#post-2068997 > div > div > div.article-content.col-md-8 > div.flex-columns.row > div.col-md-9.col-md-push-2 > div > p:nth-child(17)');
+      elem.scrollIntoView({
+        block: "end"
+      });
+    });
+    try {
+      await page.$('#ouibounce-modal > div > div.close-signup')
+      await page.click('#ouibounce-modal > div > div.close-signup');
+    } catch {}
+    await page.waitForTimeout(2000);
+
+    await page.evaluate(() => {
+      let elem = document.querySelector('#post-2068997 > div > div > div.article-content.col-md-8 > div.flex-columns.row > div.col-md-9.col-md-push-2 > div > p:nth-child(18)');
+      elem.scrollIntoView({
+        block: "end"
+      });
+    });
+    try {
+      await page.$('#ouibounce-modal > div > div.close-signup')
+      await page.click('#ouibounce-modal > div > div.close-signup');
+    } catch {}
+    await page.waitForTimeout(2000);
+
+    await page.evaluate(() => {
+      let elem = document.querySelector('#post-2068997 > div > div > div.article-content.col-md-8 > div.flex-columns.row > div.col-md-9.col-md-push-2 > div > p:nth-child(19)');
+      elem.scrollIntoView({
+        block: "end"
+      });
+    });
+    try {
+      await page.$('#ouibounce-modal > div > div.close-signup')
+      await page.click('#ouibounce-modal > div > div.close-signup');
+    } catch {}
+    await page.waitForTimeout(2000);
+
+    await page.evaluate(() => {
+      let elem = document.querySelector('#post-2068997 > div > div > div.article-content.col-md-8 > div.flex-columns.row > div.col-md-9.col-md-push-2 > div > p:nth-child(20)');
+      elem.scrollIntoView({
+        block: "end"
+      });
+    });
+    try {
+      await page.$('#ouibounce-modal > div > div.close-signup')
+      await page.click('#ouibounce-modal > div > div.close-signup');
+    } catch {}
+    await page.waitForTimeout(2000);
+
+    await page.evaluate(() => {
+      let elem = document.querySelector('#post-2068997 > div > div > div.article-content.col-md-8 > div.flex-columns.row > div.col-md-9.col-md-push-2 > div > p:nth-child(21)');
+      elem.scrollIntoView({
+        block: "end"
+      });
+    });
+    try {
+      await page.$('#ouibounce-modal > div > div.close-signup')
+      await page.click('#ouibounce-modal > div > div.close-signup');
+    } catch {}
+    await page.waitForTimeout(2000);
+
+    await page.evaluate(() => {
+      let elem = document.querySelector('#post-2068997 > div > div > div.article-content.col-md-8 > div.flex-columns.row > div.col-md-9.col-md-push-2 > div > p:nth-child(22)');
+      elem.scrollIntoView({
+        block: "end"
+      });
+    });
+    try {
+      await page.$('#ouibounce-modal > div > div.close-signup')
+      await page.click('#ouibounce-modal > div > div.close-signup');
+    } catch {}
+    await page.waitForTimeout(2000);
+
+    await page.evaluate(() => {
+      let elem = document.querySelector('#post-2068997 > div > div > div.article-content.col-md-8 > div.flex-columns.row > div.col-md-9.col-md-push-2 > div > p:nth-child(23)');
+      elem.scrollIntoView({
+        block: "end"
+      });
+    });
+    try {
+      await page.$('#ouibounce-modal > div > div.close-signup')
+      await page.click('#ouibounce-modal > div > div.close-signup');
+    } catch {}
+    await page.waitForTimeout(5000);
+
+    // 7
+    await page.goto('https://untitled.cwandt.com/', {
+      timeout: 0
+    });
 
     await page.waitForTimeout(15000);
     await page.evaluate(() => {
@@ -508,8 +462,10 @@ import { PuppeteerScreenRecorder } from 'puppeteer-screen-recorder';
     });
     await page.waitForTimeout(12000);
 
-    // 6
-    await page.goto('https://eyeondesign.aiga.org/category/design-plus/art/#4', { timeout: 0 });
+    // 8
+    await page.goto('https://eyeondesign.aiga.org/category/design-plus/art/#4', {
+      timeout: 0
+    });
 
     await page.waitForTimeout(12000);
     await page.evaluate(() => {
@@ -583,8 +539,10 @@ import { PuppeteerScreenRecorder } from 'puppeteer-screen-recorder';
     });
     await page.waitForTimeout(7000);
 
-    // 7
-    await page.goto('https://www.para-site.art/exhibitions/', { timeout: 0 });
+    // 9
+    await page.goto('https://www.para-site.art/exhibitions/', {
+      timeout: 0
+    });
 
     await page.waitForTimeout(12000);
     await page.evaluate(() => {
@@ -615,15 +573,19 @@ import { PuppeteerScreenRecorder } from 'puppeteer-screen-recorder';
       window.scrollBy(0, window.innerHeight);
     });
     await page.waitForTimeout(12000);
-    await page.goto('https://www.para-site.art/exhibitions/the-problem-of-asia/', { timeout: 0 });
+    await page.goto('https://www.para-site.art/exhibitions/the-problem-of-asia/', {
+      timeout: 0
+    });
     await page.waitForTimeout(12000);
     await page.evaluate(() => {
       window.scrollBy(0, window.innerHeight);
     });
     await page.waitForTimeout(10000);
 
-    // 8
-    await page.goto('https://kadist.org/region/latin-america/?post_type=work', { timeout: 0 });
+    // 10
+    await page.goto('https://kadist.org/region/latin-america/?post_type=work', {
+      timeout: 0
+    });
 
     await page.waitForTimeout(6000);
     await page.evaluate(() => {
@@ -675,8 +637,10 @@ import { PuppeteerScreenRecorder } from 'puppeteer-screen-recorder';
     });
     await page.waitForTimeout(7000);
 
-    // 9
-    await page.goto('https://www.mori.art.museum/en/collection/artists/index.html', { timeout: 0 });
+    // 11
+    await page.goto('https://www.mori.art.museum/en/collection/artists/index.html', {
+      timeout: 0
+    });
     let a;
     await page.evaluate(() => {
       let elem = document.querySelector('body > div > section.global-contents > div.collectionArtistsBody > section:nth-child(2) > div > h2');
@@ -878,8 +842,10 @@ import { PuppeteerScreenRecorder } from 'puppeteer-screen-recorder';
     });
     await page.waitForTimeout(9000);
 
-    // 10
-    await page.goto('https://artreview.com/power-100/', { timeout: 0 });
+    // 12
+    await page.goto('https://artreview.com/power-100/', {
+      timeout: 0
+    });
     await page.click('#gatsby-focus-wrapper > footer > div.CookieNotice__Wrapper-sc-1mbny7t-0.hrsUkh > button');
     await page.waitForTimeout(3000);
     await page.evaluate(() => {

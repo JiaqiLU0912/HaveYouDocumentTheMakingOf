@@ -1,11 +1,27 @@
 {
   "type": "module",
   "dependencies": {
-    "puppeteer": "^19.11.1",
+    "puppeteer": "^21.3.8",
     "puppeteer-screen-recorder": "^2.1.2"
   },
   "directories": {
     "test": "test"
   },
+  "name": "haveyoudocumentthemakingof",
+  "version": "1.0.0",
+  "main": "ext.test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JiaqiLU0912/HaveYouDocumentTheMakingOf.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JiaqiLU0912/HaveYouDocumentTheMakingOf/issues"
+  },
+  "homepage": "https://github.com/JiaqiLU0912/HaveYouDocumentTheMakingOf#readme",
   "description": ""
 }
