@@ -317,17 +317,10 @@ import {
     await page.waitForTimeout(10000);
 
     // 5
-    await page.goto(' https://www.metmuseum.org/art/collection/search?q=Sherrie+Levine&sortBy=Relevance', {
+    await page.goto('https://whitney.org/artists/2978?q%5Bhas_image_true%5D=1', {
       timeout: 0
     });
-    await page.waitForTimeout(3000);
-    await page.evaluate(() => {
-      let elem = document.querySelector('#__next > main > section.object-grid_grid__hKKqs > figure:nth-child(23)');
-      elem.scrollIntoView({
-        block: "end"
-      });
-    });
-    await page.waitForTimeout(12000);
+    await page.waitForTimeout(15000);
 
     // 6
     await page.goto('https://news.artnet.com/art-world/da-vinci-face-photo-filter-2068997', {
